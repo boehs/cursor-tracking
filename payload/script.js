@@ -1,23 +1,22 @@
-document.addEventListener('DOMContentLoaded', (event) => {
-
-var cursor_x = -1;
-var cursor_y = -1;
-document.onmousemove = function(event)
-{
-    cursor_x = event.pageX;
-    cursor_y = event.pageY;
-    window.moveTo(cursor_x,cursor_y)
+function makeid(length) {
+	var result = "";
+	var characters =
+		"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+	var charactersLength = characters.length;
+	for (var i = 0; i < length; i++) {
+		result += characters.charAt(Math.floor(Math.random() * charactersLength));
+	}
+	return result;
 }
-});
 
-//document.addEventListener('DOMContentLoaded', (event) => {
-
-//var startingTop = 150;
-//var startingLeft = 100;
-//document.onmousemove = function(event)
-//{
-//    math = Math.round(Math.sqrt(Math.pow(startingTop - event.clientY, 2)));
-//    math2 = Math.round(Math.sqrt(Math.pow(startingLeft - event.clientX, 2)));
-//    window.moveBy(math,math2)
-//}
-// });
+document.onmousemove = function (event) {
+	window.moveBy(event.clientX - 150, event.clientY - 100);
+	window.resizeTo(300, 300);
+	var thiswindow2 = window.open(
+		"/payload?" + makeid(5),
+		"NO ESCAPE",
+		`toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no,width=300,height=300`
+	);
+	thiswindow.moveTo(event.clientX - 150, event.clientY - 100);
+	window.removeEventListener("mousemove", listener, false);
+};
