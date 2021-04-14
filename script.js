@@ -6,4 +6,6 @@ document.onmousemove = function listener(e) {
 	);
 	thiswindow.moveTo(e.clientX - 150, e.clientY - 100);
 	window.removeEventListener("mousemove", listener, false);
+  window.location.href = "rick";
+
 };
