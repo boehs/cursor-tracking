@@ -8,3 +8,8 @@ document.onmousemove = function (event) {
 window.onbeforeunload = function () {
 	localStorage.setItem("panic", true);
 };
+
+window.addEventListener("load", (event) => {
+	var vid = document.getElementById("rick");
+	rick.load();
+});
