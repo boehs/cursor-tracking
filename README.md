@@ -6,4 +6,4 @@
 
 Otherwise epic
 
-# cursortracking.netlify.app
+# https://cursortracking.netlify.app
